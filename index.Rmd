@@ -1,0 +1,18 @@
+---
+title: "Mpg plot"
+author: "Daniel Arturo Lopez Sanchez"
+date: "10/18/2020"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Plotting Weight and Miles per Gallon
+coloring by number of cylinders and sizing by horsepower.
+```{r, echo=FALSE, eval=TRUE, warning=FALSE}
+suppressPackageStartupMessages(library(plotly))
+plot_ly(mtcars, x=~wt, y=~mpg, type = "scatter", color = ~factor(cyl), size = ~hp, mode="markers")
+```
+
